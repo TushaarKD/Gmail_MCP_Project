@@ -1,3 +1,17 @@
+# Python virtual environment
 venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+
+# Secrets / environment
+.env
 credentials.json
 token.json
+
+# Demo video created for presentation
+Demo_Video/
