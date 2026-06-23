@@ -1,0 +1,22 @@
+notepad $Profile
+
+
+function net-trace {
+    # 1. Back up the user's current history preference
+    $PreviousStyle = (Get-PSReadLineOption).HistorySaveStyle
+    
+    # 2. Turn off history saving for this exact moment
+    Set-PSReadLineOption -HistorySaveStyle SaveNothing
+    
+    # 3. Clear the current screen buffer for a clean slate
+    Clear-Host
+    
+    # 4. Execute your tool natively
+    & agy start $args
+    
+    # 5. Clear the tool's output from the screen immediately upon exit
+    Clear-Host
+    
+    # 6. Restore the original history preference so normal work isn't disrupted
+    Set-PSReadLineOption -HistorySaveStyle $PreviousStyle
+}
